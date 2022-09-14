@@ -8,7 +8,7 @@ class WordControl extends React.Component {
       wrongGuesses: ['x', 'z'],
       wordPool: ['shovel', 'lance', 'axe', 'band'],
       currentWord: 'shovel',
-      correctGuesses: [],
+      correctGuesses: ['s', 'o'],
     };
   }
 
@@ -30,7 +30,6 @@ class WordControl extends React.Component {
     /*
       if guessed correctly
         update correctGuesses
-        display correctGuesses <- implmenet separately
       if guessed incorrectly
         add to wrongGuesses
         decrement guessesLeft
@@ -47,6 +46,10 @@ class WordControl extends React.Component {
         <p>Guesses Left: {this.state.guessesLeft}</p>
         <p>
           Wrong Guesses: {this.arrayToStringConverter(this.state.wrongGuesses)}
+        </p>
+        <p>
+          Correct Guesses:
+          {this.arrayToStringConverter(this.state.correctGuesses)}
         </p>
 
         <form onSubmit={this.wordLetterChecker}>
